@@ -75,6 +75,69 @@ Vocal tone: Lead cold powerful soprano operatic precision, Backing male Gregoria
 - **特殊要素**: ハモリ/コール&レスポンス/アドリブ/言葉遊び
 - **⚠️ 注意**: 特に指定がない場合、メインボーカルは女性とする
 
+## 5.5. 歌詞内メタタグ記法ルール（必須）
+
+### **⚠️ 重要：各セクションに必ず声質指定を入れる**
+
+Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の各セクションに必ずメタタグを付ける**こと。
+
+#### **基本形式**
+```
+[セクション名 – 楽器/雰囲気, 声質]
+```
+
+#### **必須要素**
+1. **セクション名**: `Intro`, `Verse`, `Pre-Chorus`, `Chorus`, `Bridge`, `Outro`
+2. **楽器/雰囲気**（オプションだが推奨）: `bright intro`, `emotional build`, `explosive crescendo`
+3. **声質**（必須）: `light cute cheerful female vocal`, `powerful strong female vocal`, `whispered male backing`
+
+#### **実例（既存楽曲から）**
+
+✅ **良い例（実証済み）**
+```
+[Verse 1 – bright intro, light cute cheerful female vocal]
+[Chorus – full band+strings, powerful emotional female vocal with harmonies]
+[Bridge – piano solo, whispered intimate vocal → building intensity]
+```
+
+❌ **悪い例（メタタグなし）**
+```
+遠い世界から響く呼び声
+三種の神器が消えた日から
+```
+→ Sunoが声色を自動選択してしまい、意図と異なる結果になる可能性が高い
+
+#### **アイドル楽曲でのメンバー指定例**
+```
+[Verse 1 – Tsumika solo, shy but determined female vocal]
+[Verse 2 – Mirai solo, strong hopeful female vocal]
+[Pre-Chorus – Kurumi lead, cute bright high-pitched vocal]
+[Chorus – All 5 members, energetic idol vocals with layered harmonies]
+[Bridge – Minamo solo, cool mature lower female vocal]
+```
+
+#### **ソロ曲での感情変化指定例**
+```
+[Verse 1 – gentle acoustic, soft vulnerable female vocal]
+[Pre-Chorus – building tension, increasingly determined vocal]
+[Chorus – full band, powerful confident female vocal]
+[Bridge – piano only, whispered reflective → explosive release]
+[Final Chorus – all instruments, triumphant soaring vocal]
+```
+
+#### **チェックリスト**
+- [ ] 全セクション（Intro/Verse/Chorus/Bridge/Outro）にメタタグがあるか
+- [ ] 最低限「声質」は全セクションに記載されているか
+- [ ] 感情・音量・楽器の変化がメタタグに反映されているか
+- [ ] メンバーのソロパート指定がある場合、メンバー名+声質が記載されているか
+
+### **なぜこれが重要か**
+
+1. **Sunoの仕様**: メタタグがないとSunoは自動でボーカルを選択してしまう
+2. **再現性**: 同じプロンプトで何度生成しても声質がブレにくくなる
+3. **品質**: 既存楽曲7曲すべてでこの手法を使用し、高品質な結果を得ている
+4. **JSON形式は非推奨**: SunoはJSON形式を公式サポートしておらず、メタタグ形式が最も確実
+
 ## 6. 世界観根拠（必須）
 以下のいずれかの形式で根拠を提示してください：
 - **引用カード**: `cardId / name / 根拠となるフレーバー要約`

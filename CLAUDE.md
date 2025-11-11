@@ -57,6 +57,10 @@
    - `prompts/templates/SUNO_MUSIC_PROMPT_TEMPLATE.md` をベースに作成。
    - 既存楽曲プロンプトを参考に、構成・語彙・根拠記述のスタイルを統一。
    - **⚠️ ボーカル設定**: 特に指定がない場合、メインボーカルは女性とする。
+   - **⚠️ メタタグ必須**: 歌詞の各セクション（Verse/Chorus/Bridge等）に必ず `[セクション名 – 楽器/雰囲気, 声質]` 形式のメタタグを記載すること。
+     - 例: `[Verse 1 – bright intro, light cute cheerful female vocal]`
+     - メンバー指定例: `[Verse 1 – Tsumika solo, shy but determined female vocal]`
+     - 詳細は `prompts/templates/SUNO_MUSIC_PROMPT_TEMPLATE.md` の「5.5. 歌詞内メタタグ記法ルール」を参照。
    - **⚠️ 重要**: Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**合計870文字以内**に圧縮必須。
    - **圧縮ルール**:
      - 改行最小化（4セクションのみ改行）、詳細説明はカンマ区切り
