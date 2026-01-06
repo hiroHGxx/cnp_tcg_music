@@ -9,14 +9,33 @@ CNP TCGの世界観に基づいた楽曲制作・音楽コンテンツのため�
 ### **prompts/suno/**
 CNP TCG楽曲のSuno用プロンプト集（アルバム/企画単位でフォルダ化）
 
-#### 既存楽曲（完成済み）
-- `四界解放譜/CNP_ANIME_OPENING_SUNO_PROMPT.md` - アニメオープニングテーマ「未知なる旅路へ」
-- `四界解放譜/CNP_ANIME_ENDING_SUNO_PROMPT.md` - アニメエンディングテーマ「帰り道の空」
-- `四界解放譜/CNP_ANIME_KAGUTSUCHI_SUNO_PROMPT.md` - カグツチ戦闘挿入歌「烈火の誓い」
-- `四界解放譜/CNP_ANIME_AQUANOVA_SUNO_PROMPT.md` - アクアノーヴァ解放テーマ「蒼潮のリベリオン」
-- `四界解放譜/CNP_ANIME_METEORAS_SUNO_PROMPT.md` - メテオラス解放テーマ「翠陰の共鳴歌」
-- `四界解放譜/CNP_ANIME_MIDGAN_SUNO_PROMPT.md` - ミッドガン希望テーマ「黄昏の夜明け」
-- `CNP_SEIDO_THEME_claude_SUNO_PROMPT.md` - セイドウ組織テーマ「白銀の粛清歌」
+#### 1stアルバム「四界解放譜」（6曲）
+- `四界解放譜/CNP_ANIME_OPENING_SUNO_PROMPT.md` - 「未知なる旅路へ」
+- `四界解放譜/CNP_ANIME_AQUANOVA_SUNO_PROMPT.md` - 「蒼潮のリベリオン」
+- `四界解放譜/CNP_ANIME_KAGUTSUCHI_SUNO_PROMPT.md` - 「烈火の誓い」
+- `四界解放譜/CNP_ANIME_METEORAS_SUNO_PROMPT.md` - 「翠陰の共鳴歌」
+- `四界解放譜/CNP_ANIME_MIDGAN_SUNO_PROMPT.md` - 「黄昏の夜明け」
+- `四界解放譜/CNP_ANIME_ENDING_SUNO_PROMPT.md` - 「帰り道の空」
+
+#### 2ndアルバム「星環の絆-Beyond Horizons-」（8曲）
+- `星環の絆-Beyond Horizons-/CNP_ANIME_OPENING2_claude_SUNO_PROMPT.md` - 「繋がる想い」
+- `星環の絆-Beyond Horizons-/20251010_tabikaze_startline_codex.md` - 「旅風のスタートライン」
+- `星環の絆-Beyond Horizons-/CNP_TRAVELERS_claude_SUNO_PROMPT.md` - 「次元を越える者たちへ」
+- `星環の絆-Beyond Horizons-/20251009_shinki_codex.md` - 「神器継承譜」
+- `星環の絆-Beyond Horizons-/CNP_SEIDO_THEME_claude_SUNO_PROMPT.md` - 「白銀の粛清歌」
+- `星環の絆-Beyond Horizons-/CNP_TRADE_COLONY_claude_SUNO_PROMPT.md` - 「星界帰還」
+- `星環の絆-Beyond Horizons-/20251005_tomoshibi_ed_codex.md` - 「灯火をつなぐ歌」
+- `星環の絆-Beyond Horizons-/CNP_ANIME_ENDING2_claude_SUNO_PROMPT.md` - 「夜空の約束」
+
+#### 3rdアルバム「3rd works（五彩リゾナンス）」（8曲）
+- `3rd_works/01_CNP_UNIT_COUNTDOWN_FUTURE_claude_SUNO_PROMPT.md` - 「未来へのカウントダウン」
+- `3rd_works/02_CNP_UNIT_BONDS_FIVE_COLORS_claude_SUNO_PROMPT.md` - 「五色の絆」
+- `3rd_works/03_CNP_UNIT_STAGE_BATTLEFIELD_claude_SUNO_PROMPT.md` - 「ステージは戦場」
+- `3rd_works/04_CNP_UNIT_TSUMIKA_SOLO_claude_SUNO_PROMPT.md` - 「ツミカソロ」
+- `3rd_works/05_CNP_UNIT_MIRAI_SOLO_claude_SUNO_PROMPT.md` - 「ミライソロ」
+- `3rd_works/06_CNP_UNIT_KURUMI_SOLO_codex_SUNO_PROMPT.md` - 「クルミソロ」
+- `3rd_works/07_CNP_UNIT_LISA_SOLO_claude_SUNO_PROMPT.md` - 「Starry adventure!」
+- `3rd_works/08_CNP_UNIT_MINAMO_SOLO_claude_SUNO_PROMPT.md` - 「ミナモソロ」
 
 ### **prompts/templates/**
 楽曲制作用のテンプレート類
@@ -49,15 +68,41 @@ CNP TCG世界観の一次資料
 
 ## 🎵 完成楽曲一覧
 
+### 📀 1stアルバム「四界解放譜」（6曲）
 | 楽曲名 | 種類 | 対象 | ジャンル | 状態 |
 |--------|------|------|----------|------|
 | **未知なる旅路へ** | オープニング | 全大陸・冒険開始 | J-Pop Rock | ✅ 完成 |
-| **帰り道の空** | エンディング | 故郷への帰還 | アコースティック | ✅ 完成 |
-| **烈火の誓い** | 戦闘挿入歌 | カグツチ大陸 | Taiko × J-Rock | ✅ 完成 |
 | **蒼潮のリベリオン** | 解放テーマ | アクアノーヴァ大陸 | EDM × J-Pop | ✅ 完成 |
+| **烈火の誓い** | 戦闘挿入歌 | カグツチ大陸 | Taiko × J-Rock | ✅ 完成 |
 | **翠陰の共鳴歌** | 解放テーマ | メテオラス大陸 | オーケストラ × フォーク | ✅ 完成 |
 | **黄昏の夜明け** | 希望テーマ | ミッドガン大陸 | シンセウェーブ × J-Pop | ✅ 完成 |
-| **白銀の粛清歌** | 敵対組織テーマ | セイドウ組織 | シンフォニック・メタル × インダストリアル | ✅ 完成 |
+| **帰り道の空** | エンディング | 故郷への帰還 | アコースティック | ✅ 完成 |
+
+### 📀 2ndアルバム「星環の絆-Beyond Horizons-」（8曲）
+| 楽曲名 | 種類 | 対象 | ジャンル | 状態 |
+|--------|------|------|----------|------|
+| **繋がる想い** | 第2期OP | 希望と絆 | J-Pop | ✅ 完成 |
+| **旅風のスタートライン** | OP | 冒険アンセム | ハイテンポJ-Rock | ✅ 完成 |
+| **次元を越える者たちへ** | 旅のアンセム | 全大陸 | オルタナティブロック | ✅ 完成 |
+| **神器継承譜** | クライマックス挿入歌 | 三種の神器 | シンフォニックJ-Pop | ✅ 完成 |
+| **白銀の粛清歌** | 敵対組織テーマ | セイドウ組織 | シンフォニック・メタル | ✅ 完成 |
+| **星界帰還** | 貿易コロニー解放 | 宇宙帰還 | テクノポップ × フューチャーベース | ✅ 完成 |
+| **灯火をつなぐ歌** | ED | 仲間の絆 | アコースティック | ✅ 完成 |
+| **夜空の約束** | 第2期ED | 余韻・静寂 | フォークバラード | ✅ 完成 |
+
+### 📀 3rdアルバム「3rd works（五彩リゾナンス）」（8曲）
+| 楽曲名 | 種類 | 対象 | ジャンル | 状態 |
+|--------|------|------|----------|------|
+| **未来へのカウントダウン** | ユニットデビュー曲 | 5人ユニット | K-Pop × Hyperpop | ✅ 完成 |
+| **五色の絆** | ユニットメインテーマ | 5人ユニット | Emotional Electropop | ✅ 完成 |
+| **ステージは戦場** | ユニットパフォーマンス曲 | 5人ユニット | Trap × EDM | ✅ 完成 |
+| **ツミカソロ** | ソロ曲 | ツミカ（カグツチ） | 炎×ダンスロック | ✅ 完成 |
+| **ミライソロ** | ソロ曲 | ミライ（ミッドガン） | テクノポップ | ✅ 完成 |
+| **クルミソロ** | ソロ曲 | クルミ（メテオラス） | フォレストポップ | ✅ 完成 |
+| **Starry adventure!** | ソロ曲 | リサ（貿易コロニー） | シンセウェーブ | ✅ 完成 |
+| **ミナモソロ** | ソロ曲 | ミナモ（アクアノーヴァ） | アクアトランス | ✅ 完成 |
+
+**総楽曲数**: **22曲**（1st: 6曲 + 2nd: 8曲 + 3rd: 8曲）
 
 ## 🎯 今後の制作予定
 
