@@ -1,13 +1,19 @@
-# CNP TCG Suno楽曲制作用プロンプト（テンプレート）
+## 🤖 AI Agent 向けバリデーション命令（最重要）
 
-このテンプレートに沿って情報を記入して渡してください。世界観根拠と楽曲条件を揃えることで、すぐにSuno用プロンプトを作成できます。
+**新規プロンプト作成、または修正時、AI は以下の手順を自発的に実行すること：**
+
+1. **ドラフト作成**: 本テンプレートに従い、歌詞と Style プロンプトを作成する。
+2. **自動計測**: 作成した `### **【Styles】**` の 4 セクション（Style/Refs, Vocal, Arrangement, Production）を対象に、**`scripts/count_suno_chars.py` を使用して改行込みの合計文字数を計測せよ。**
+3. **自動調整**: **合計が 980 文字を超えている場合**、ユーザーに提示する前に自律的に圧縮を行い、目標値に収まるまで再計測を繰り返せ。
+4. **報告**: ユーザーへの回答時、計測された文字数を `**文字数**: ○○ 文字（改行込み） ✅` の形式でプロンプト末尾に記載せよ。
+5. **詳細検証**: `PROMPT_VALIDATION_FLOW.md` に従い、世界観と歌詞の整合性も併せて確認せよ。
 
 ---
 
 ## ⚠️ Sunoプロンプト最適化ルール（1000文字制限対応）
 
 ### **文字数削減の必須ルール**
-Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**合計870文字以内**に収める必要があります。
+Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**合計980文字以内**に収める必要があります（最大1000文字の枠を最大限活用）。
 
 #### **圧縮テクニック**
 1. **改行最小化**: 4セクションのみ改行。詳細説明は改行なし、カンマ区切り
@@ -18,28 +24,12 @@ Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**�
 6. **セクション名短縮**: "Style/References"→"Style/Refs", "Production Notes"→"Production"
 7. **⚠️ アーティスト名禁止**: 具体的なアーティスト名・バンド名は使用不可（Nightwish, Rammstein等）。代わりにジャンル特徴で表現
 
-#### **圧縮例**
-
-❌ **従来形式（冗長、約350文字）**
-```
-**Vocal tone**
-- Lead: Cold, powerful, and clear female soprano with operatic precision
-- Backing: Male Gregorian choir performing Latin chants, whispered bridge sections
-- Harmony: Multi-layered epic choir in chorus for overwhelming divine authority
-- Delivery: Precise Japanese diction, sharp English tags, emotionless yet commanding
-```
-
-✅ **最適化形式（簡潔、約150文字）**
-```
-Vocal tone: Lead cold powerful soprano operatic precision, Backing male Gregorian choir whispered bridge, Harmony epic multilayer chorus, Delivery precise Japanese emotionless commanding
-```
-
 #### **4セクション合計の目安配分**
-- **Style/Refs**: 200-220文字
-- **Vocal tone**: 150-180文字
-- **Arrangement**: 250-280文字
-- **Production**: 180-210文字
-- **合計**: 780-870文字（870文字以内厳守）
+- **Style/Refs**: 230-250文字
+- **Vocal tone**: 180-210文字
+- **Arrangement**: 280-310文字
+- **Production**: 210-240文字
+- **合計**: 900-980文字（980文字以内推奨）
 
 ---
 
@@ -89,7 +79,7 @@ Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の�
 #### **必須要素**
 1. **セクション名**: `Intro`, `Verse`, `Pre-Chorus`, `Chorus`, `Bridge`, `Outro`
 2. **楽器/雰囲気**（オプションだが推奨）: `bright intro`, `emotional build`, `explosive crescendo`
-3. **声質**（必須）: `light cute cheerful female vocal`, `powerful strong female vocal`, `whispered male backing`
+3. **声質**（必須）: `light cute cheerful female vocal`, `powerful strong female vocal`, `soft melodic male backing`
 
 #### **実例（既存楽曲から）**
 
@@ -97,7 +87,7 @@ Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の�
 ```
 [Verse 1 – bright intro, light cute cheerful female vocal]
 [Chorus – full band+strings, powerful emotional female vocal with harmonies]
-[Bridge – piano solo, whispered intimate vocal → building intensity]
+[Bridge – piano solo, soft melodic fully sung intimate vocal → building intensity]
 ```
 
 ❌ **悪い例（メタタグなし）**
@@ -121,7 +111,7 @@ Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の�
 [Verse 1 – gentle acoustic, soft vulnerable female vocal]
 [Pre-Chorus – building tension, increasingly determined vocal]
 [Chorus – full band, powerful confident female vocal]
-[Bridge – piano only, whispered reflective → explosive release]
+[Bridge – piano only, soft melodic fully sung reflective vocal → explosive release]
 [Final Chorus – all instruments, triumphant soaring vocal]
 ```
 
@@ -130,6 +120,27 @@ Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の�
 - [ ] 最低限「声質」は全セクションに記載されているか
 - [ ] 感情・音量・楽器の変化がメタタグに反映されているか
 - [ ] メンバーのソロパート指定がある場合、メンバー名+声質が記載されているか
+- [ ] 下の「語り禁止ルール」をすべて満たしているか
+
+### **⚠️ 語り禁止ルール（必須）**
+
+日本語の歌詞を Suno が語り（話し声）で読むと、発音がカタコトになる。そのため語りのパートは作らず、全編を歌にする。2026-10-13「やわらかいまま」の Bridge で実際に起きた。
+
+**書かないもの**
+- メタタグに `spoken` `whispered` `whisper` `narration` `rap` などの話し声寄りの語を入れない
+- `very soft` `barely audible` のように、声を極端に小さくする指定を入れない（ささやき寄りになる）
+- 歌詞の行をかぎ括弧（「」）や引用符（"）で囲まない。台詞に見えると語りにされやすい
+- `(Soft build)` `(guitar fade out)` のような演出指示の行を歌詞に入れない。カッコ内の文を読み上げたり語りにしたりする
+
+**書くもの**
+- 静かなセクション（Bridge、楽器が少ない Verse、Outro）のメタタグには `melodic` `fully sung` を入れる
+  - 例: `[Bridge – sparse piano+solo cello, tender aching melodic fully sung female vocal, gently warming]`
+- スタイル欄の Vocal に `no spoken word` を入れる
+- ハミングやスキャットは `Lu lu lu` `La la la` のように歌う音で書く
+
+**生成後に語りになっていたら**
+- その区間の行を短く区切る（1行が長いと読み上げ調になりやすい）
+- メタタグの楽器を少し足す（ピアノ1本などの極端に薄い編成は語りになりやすい）
 
 ### **なぜこれが重要か**
 
@@ -194,6 +205,7 @@ Sunoで声色・感情・楽器を確実に反映させるため、**歌詞の�
 - [ ] 中心メッセージ・避けるべき表現の明確化
 - [ ] 既存楽曲との関係性の考慮
 - [ ] **Sunoプロンプト4セクション合計1000文字以内に圧縮可能か確認**
+- [ ] **語り禁止ルール（5.5節）を満たしているか**
 
 ---
 
@@ -246,7 +258,7 @@ Structure: Intro → Verse → Pre → Chorus → Verse → Pre → Chorus → B
 
 **Vocal tone**
 - Lead: Cold, powerful, clear female soprano with operatic precision
-- Backing: Male Gregorian choir performing Latin chants, whispered bridge sections
+- Backing: Male Gregorian choir performing Latin chants, hushed sung bridge sections
 - Harmony: Multi-layered epic choir in chorus for overwhelming divine authority
 - Delivery: Precise Japanese diction, sharp English tags, emotionless yet commanding
 
@@ -257,7 +269,7 @@ Structure: Intro → Verse → Pre → Chorus → Verse → Pre → Chorus → B
 - Rhythm: Heavy 7-string guitars, driving bass, industrial drum machine + live taiko
 - Symphonic: Full string orchestra, brass section, pipe organ for "holy tyranny" feel
 - Electronic: Cold synth pads, arpeggios, digital noise for mechanical atmosphere
-- Bridge: Lone piano + whisper → explosive orchestral + metal crescendo with taiko
+- Bridge: Lone piano + soft sung vocal → explosive orchestral + metal crescendo with taiko
 - Outro: Fading organ, single taiko strike, reverb tail into silence
 
 ---
@@ -274,9 +286,9 @@ Structure: Intro → Verse → Pre → Chorus → Verse → Pre → Chorus → B
 ```
 Style/Refs: Symphonic metal×industrial w/Gregorian chant elements. Epic orchestral power metal meets dark industrial soundscape. 1:35-1:50 TV boss battle theme. 130 BPM, Fm→Gm final chorus. Structure: Intro→Verse→Pre→Chorus×2→Bridge (piano build)→Final Chorus (key up)→Outro.
 
-Vocal tone: Lead cold powerful soprano operatic precision, Backing male Gregorian choir Latin chants whispered bridge sections, Harmony multilayered epic choir chorus overwhelming divine authority, Delivery precise Japanese diction sharp English tags emotionless commanding.
+Vocal tone: Lead cold powerful soprano operatic precision, Backing male Gregorian choir Latin chants hushed sung bridge sections, Harmony multilayered epic choir chorus overwhelming divine authority, Delivery precise Japanese diction sharp English tags emotionless commanding.
 
-Arrangement: Intro pipe organ+dark choir ceremonial march snare, Rhythm heavy 7-string guitars driving bass industrial drum machine+live taiko, Symphonic full string orchestra brass section pipe organ holy tyranny feel, Electronic cold synth pads arpeggios digital noise mechanical atmosphere, Bridge lone piano whisper→explosive orchestral+metal crescendo w/taiko, Outro fading organ single taiko strike reverb tail silence.
+Arrangement: Intro pipe organ+dark choir ceremonial march snare, Rhythm heavy 7-string guitars driving bass industrial drum machine+live taiko, Symphonic full string orchestra brass section pipe organ holy tyranny feel, Electronic cold synth pads arpeggios digital noise mechanical atmosphere, Bridge lone piano soft sung→explosive orchestral+metal crescendo w/taiko, Outro fading organ single taiko strike reverb tail silence.
 
 Production: Mix massive wall of sound epic yet oppressive atmosphere, Vocals lead cuts through instrumentation w/hall reverb choir cathedral-sized, Stereo wide orchestra/choir ±60° tight metal core guitars/bass/drums centered, Mastering −9 to −10 LUFS cinematic power emphasize low-end punch, Special FX reverse cymbals before key change orchestral stabs on Seidō mentions.
 ```

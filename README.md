@@ -37,6 +37,11 @@ CNP TCG楽曲のSuno用プロンプト集（アルバム/企画単位でフォ�
 - `3rd_works/07_CNP_UNIT_LISA_SOLO_claude_SUNO_PROMPT.md` - 「Starry adventure!」
 - `3rd_works/08_CNP_UNIT_MINAMO_SOLO_claude_SUNO_PROMPT.md` - 「ミナモソロ」
 
+#### 4th〜6th（各フォルダの `README.md` に企画ノートあり）
+- `4th_works/` - 五彩リゾナンス第2弾（8曲）
+- `5th_works/` - 最終章サウンドトラック「暁光の旋律」（2曲で凍結）
+- `6th_works/` - アコースティック・ライトポップでキャラクターの内面を歌う（制作中）
+
 ### **prompts/templates/**
 楽曲制作用のテンプレート類
 

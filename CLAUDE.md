@@ -26,6 +26,17 @@
 7. `audio/README.md`
    - 音源命名規則と完成ファイルの配置状況を把握。
 
+## 現在の状況（2026-10-14 更新）
+
+下の「完成済み楽曲一覧」は 3rd までで止まっている。4th 以降と配信の状況は次のファイルが正本。
+
+- **制作中の企画**: 6th works（アコースティック・ライトポップでキャラクターの内面を歌う）。企画ノートは `prompts/suno/6th_works/README.md`。01「陽だまりの記憶」、02「やわらかいまま」、03「夜空のすみっこ」、04「となりの足音」が完成。05 以降は未定。ボーカルは全曲女性。再開時は企画ノートの「再開メモ」を最初に読む
+- **4th works**（8曲）: `prompts/suno/4th_works/README.md`
+- **5th works**: 2曲で凍結。`prompts/suno/5th_works/README.md`
+- **配信**: DistroKid 解約で消えた15曲を SoundOn に再申請中。進み具合と入力値は `docs/distribution/DISTROKID_RELEASE_DATA.md`
+- **カバーアート**: `COVER_ART_WORKFLOW.md`。6th は人物を出さず風景で雰囲気を表す方針
+- **方針**: 題材は CNP のまま続ける。アーティスト名は Leon / 霊音 のまま
+
 ## 完成済み楽曲一覧（2025-11-16現在）
 
 ### 📀 1stアルバム「四界解放譜」（6曲）
@@ -89,7 +100,12 @@
      - 例: `[Verse 1 – bright intro, light cute cheerful female vocal]`
      - メンバー指定例: `[Verse 1 – Tsumika solo, shy but determined female vocal]`
      - 詳細は `prompts/templates/SUNO_MUSIC_PROMPT_TEMPLATE.md` の「5.5. 歌詞内メタタグ記法ルール」を参照。
-   - **⚠️ 重要**: Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**合計870文字以内**に圧縮必須。
+   - **⚠️ 語り禁止**: 日本語の語りは Suno でカタコトになるので、語りのパートは作らず全編を歌にする（2026-10-13「やわらかいまま」で発生）。
+     - メタタグに `spoken` `whispered` `narration` や、`very soft` のような極端に小さい声の指定を入れない
+     - 歌詞をかぎ括弧・引用符で囲まない。`(Soft build)` のような演出指示の行を歌詞に入れない
+     - Bridge など静かなセクションのメタタグには `melodic` `fully sung` を入れ、スタイル欄の Vocal に `no spoken word` を入れる
+     - 詳細は `prompts/templates/SUNO_MUSIC_PROMPT_TEMPLATE.md` 5.5節の「語り禁止ルール」
+   - **⚠️ 重要**: Sunoの**Style/Refs, Vocal tone, Arrangement, Production**セクションは**合計980文字以内（改行込み）**に圧縮必須。`python3 scripts/count_suno_chars.py <ファイル>` で計測する。
    - **圧縮ルール**:
      - 改行最小化（4セクションのみ改行）、詳細説明はカンマ区切り
      - MD装飾（`**太字**`、`- リスト`、`---区切り線`）は全削除
